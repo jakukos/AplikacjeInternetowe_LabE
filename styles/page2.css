@@ -1,0 +1,198 @@
+@media screen and (max-width: 600px) and (max-height: 375px) {
+    .body{
+        display: grid;
+        grid:
+        "menu"
+        "header"
+        "content"
+        "footer";
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    .menu {
+        grid-area: 1/1/2/2;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+
+}
+
+ul{
+    list-style-type: decimal;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-image:linear-gradient(
+            rgba(0, 0, 0, 0.2),
+            rgba(0, 0, 0, 0.2)
+    ),
+    url("../bcgk.jpg");
+    background-size: cover;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid:
+    "menu header header"
+    "menu content content"
+    "menu footer footer";
+    grid-template-columns: 1fr 4fr;
+
+}
+.logo{
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo img{
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);}
+
+.header{
+    font-family: cursive;
+    text-shadow: gray 2px 2px 2px;
+    grid-area: header;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    --s: 100px; /* control the size */
+    --c1: #88a3b6;
+    --c2: #041677;
+
+    --_g:
+            var(--c2) 6%  14%,var(--c1) 16% 24%,var(--c2) 26% 34%,var(--c1) 36% 44%,
+            var(--c2) 46% 54%,var(--c1) 56% 64%,var(--c2) 66% 74%,var(--c1) 76% 84%,var(--c2) 86% 94%;
+    background:
+            radial-gradient(100% 100% at 100% 0,var(--c1) 4%,var(--_g),#0008 96%,#0000),
+            radial-gradient(100% 100% at 0 100%,#0000, #0008 4%,var(--_g),var(--c1) 96%)
+            var(--c1);
+    background-size: var(--s) var(--s);
+}
+.header h1 {
+    font-size: 4em;
+    margin: 0;
+    padding: 0;
+}
+
+.menu{
+    grid-area: menu;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+}
+
+.menu a{
+    text-decoration: none;
+    font-size: 1.5em;
+    color: white;
+    padding: 20px;
+    margin: 20px;
+    background-color: #2c4a5d;
+    border-radius: 5px;
+    transition-duration: 1s;
+}
+
+.menu a:hover{
+    background-color: #c5d3dc;
+}
+.content{
+    height: 100vh;
+    width: 100%;
+    font-family: 'Courier New', Courier, monospace;
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    grid:
+            "lewa lewa"
+            "prawa prawa"
+            "footer footer";
+
+    @media screen and (max-width: 600px) {
+        .content {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4, 1fr);
+            grid:
+                "lewa"
+                "prawa"
+                "footer";
+            gap: 20px
+        }
+    }
+}
+
+.lewa .prawa{
+    padding: 10px;
+    margin: 0;
+}
+p {
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.1em;
+    color: #444;
+    text-align: left;
+    margin: 15px 0;
+    padding: 12px;
+}
+.lewa{
+    background: rgba(255, 255, 255, 0.25);
+    color: black;
+    grid-area: lewa;
+    text-align: left;
+    padding: 10px;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+.lewa h2{
+    text-align: center;
+    font-size: 2em;
+    padding: 10px;
+    border: 2px solid #2c4a5d;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.25);
+    color: #041677;
+    text-shadow: 1px 1px 2px gray;
+}
+.lewa h3{
+    text-align: left;
+    font-size: 1.5em;
+    padding: 10px;
+    color: #2c4a5d;
+    text-shadow: 1px 1px 1px gray;
+}
+.fajnyTekst{
+    text-align: center;
+}
+.fajnyTekst:first-letter{
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.prawa{
+    background: rgba(255, 255, 255, 0.25);
+    color: black;
+    grid-area: prawa;
+    text-align: right;
+    padding: 10px;
+}
+
+.footer{
+    grid-area: footer;
+    text-align: center;
+}
